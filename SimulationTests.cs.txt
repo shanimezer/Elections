@@ -1,0 +1,6 @@
+using System;
+using VoteQuest;
+class Test {
+ static int n;static void C(bool v){n++;if(!v)throw new Exception("Assertion "+n);}
+ static void Main(){var s=new Simulation();C(s.Minutes==480);C(s.Spend(8));C(s.Energy==52);C(!s.Spend(100));s.Paused=true;s.Tick(5);C(s.Elapsed==0);C(!s.Arrive(0));s.Paused=false;s.MockActivity();C(s.Energy==72);C(!s.Arrive(-1));C(!s.Arrive(3));for(int i=0;i<108;i++)C(s.Arrive(i%3));C(s.Total==108);C(!s.Arrive(0));s.Tick(1000);C(s.Closed);C(s.Minutes==1320);C(!s.Arrive(0));C(!s.Spend(1));Console.WriteLine(n+" simulation assertions passed");}
+}

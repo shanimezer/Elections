@@ -1,0 +1,22 @@
+Library/
+Temp/
+Logs/
+Obj/
+UserSettings/
+Builds/
+*.csproj
+*.sln
+.DS_Store
+
+# Unity local editor state
+.vs/
+.idea/
+.vscode/
+MemoryCaptures/
+Recordings/
+TransferBackup/
+*.user
+*.pidb
+*.booproj
+*.suo
+*.userprefs
